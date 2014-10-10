@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Name=Copy
+Exec=/opt/copy-client/CopyAgent
+Comment=Sync, Protect and Share. Everywhere.
+Icon=copy
+Categories=GNOME;GTK;Utility;

@@ -1,0 +1,15 @@
+Source: copy
+Section: utils
+Priority: optional
+Maintainer: Paolo Rotolo <paolorotolo@ubuntu.com>
+Build-Depends: debhelper (>= 7.0.50~)
+Standards-Version: 3.9.5
+
+
+Package: copy
+Architecture: any
+Depends: ${misc:Depends}
+Conflicts: copy-i386, copy-amd64
+Replaces: copy-i386, copy-amd64, copy
+Description: Share amazing things with Copy.
+ 15GB cloud storage for free.
