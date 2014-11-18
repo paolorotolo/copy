@@ -11,4 +11,6 @@ sudo apt-get updatehttp://paolorotolo.github.io/copy/resources/img/signup.jpg
 sudo apt-get install copy
 ```
 
-Official website is also available [here](http://paolorotolo.github.io/copy/)
+Project's website is available [here](http://paolorotolo.github.io/copy/).
+
+Original Copy website: https://www.copy.com/
