@@ -1,0 +1,44 @@
+ dpkg-buildpackage -rfakeroot -d -us -uc -S -sa
+dpkg-buildpackage: source package copy
+dpkg-buildpackage: source version 1.48.0456-0ubuntu1
+dpkg-buildpackage: source distribution vivid
+dpkg-buildpackage: source changed by Paolo Rotolo <paolorotolo@ubuntu.com>
+ dpkg-source --before-build copy-1.48.0456
+ fakeroot debian/rules clean
+dh_testdir
+dh_testroot
+rm -f build-stamp
+dh_clean
+ dpkg-source -b copy-1.48.0456
+dpkg-source: warning: native package version may not have a revision
+dpkg-source: warning: Version number suggests Ubuntu changes, but there is no XSBC-Original-Maintainer field
+dpkg-source: info: using source format `3.0 (native)'
+dpkg-source: info: building copy in copy_1.48.0456-0ubuntu1.tar.xz
+dpkg-source: info: building copy in copy_1.48.0456-0ubuntu1.dsc
+ dpkg-genchanges -S -sa >../copy_1.48.0456-0ubuntu1_source.changes
+dpkg-genchanges: including full source code in upload
+ dpkg-source --after-build copy-1.48.0456
+dpkg-buildpackage: source-only upload: Debian-native package
+Now running lintian...
+W: copy source: native-package-with-dash-version
+W: copy source: file-without-copyright-information copy-x86.tar.gz
+W: copy source: file-without-copyright-information copy-x86_64.tar.gz
+W: copy source: file-without-copyright-information copy.desktop
+W: copy source: file-without-copyright-information copy.png
+W: copy source: file-without-copyright-information copy.svg
+W: copy source: out-of-date-standards-version 3.9.5 (current is 3.9.6)
+Finished running lintian.
+Now signing changes and any dsc files...
+ signfile copy_1.48.0456-0ubuntu1.dsc Paolo Rotolo <paolorotolo@ubuntu.com>
+gpg: WARNING: unsafe permissions on configuration file `/home/paolo/.gnupg/gpg.conf'
+gpg: WARNING: unsafe enclosing directory permissions on configuration file `/home/paolo/.gnupg/gpg.conf'
+gpg: WARNING: unsafe permissions on configuration file `/home/paolo/.gnupg/gpg.conf'
+gpg: WARNING: unsafe enclosing directory permissions on configuration file `/home/paolo/.gnupg/gpg.conf'
+
+ signfile copy_1.48.0456-0ubuntu1_source.changes Paolo Rotolo <paolorotolo@ubuntu.com>
+gpg: WARNING: unsafe permissions on configuration file `/home/paolo/.gnupg/gpg.conf'
+gpg: WARNING: unsafe enclosing directory permissions on configuration file `/home/paolo/.gnupg/gpg.conf'
+gpg: WARNING: unsafe permissions on configuration file `/home/paolo/.gnupg/gpg.conf'
+gpg: WARNING: unsafe enclosing directory permissions on configuration file `/home/paolo/.gnupg/gpg.conf'
+
+Successfully signed dsc and changes files
