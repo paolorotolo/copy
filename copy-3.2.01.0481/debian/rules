@@ -1,0 +1,67 @@
+#!/usr/bin/make -f
+
+DEB_BUILD_GNU_TYPE ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+DEB_HOST_ARCH      ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
+DEB_HOST_ARCH_CPU  ?= $(shell dpkg-architecture -qDEB_HOST_ARCH_CPU)
+DEB_HOST_ARCH_OS   ?= $(shell dpkg-architecture -qDEB_HOST_ARCH_OS)
+DEB_HOST_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+
+configure: configure-stamp
+configure-stamp:
+	dh_testdir
+	touch configure-stamp
+
+build: build-arch build-indep
+
+build-arch: build-stamp
+build-indep: build-stamp
+
+build-stamp: configure-stamp
+	touch $@
+
+clean:
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp
+	dh_clean
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_prep
+	dh_installdirs
+	install -Dm 644 $(CURDIR)/icons/ubuntu-mono-dark/apps/22/copy.svg $(CURDIR)/debian/copy/usr/share/icons/ubuntu-mono-dark/apps/22/copy.svg
+	install -Dm 644 $(CURDIR)/icons/ubuntu-mono-light/apps/22/copy.svg $(CURDIR)/debian/copy/usr/share/icons/ubuntu-mono-light/apps/22/copy.svg
+	install -Dm 644 $(CURDIR)/copy.svg $(CURDIR)/debian/copy/usr/share/icons/hicolor/scalable/apps/copy.svg
+	install -Dm 644 $(CURDIR)/copy.desktop $(CURDIR)/debian/copy/usr/share/applications/copy.desktop
+ifeq ($(DEB_HOST_ARCH),amd64)
+	install -Dm 644 $(CURDIR)/copy-x86_64.tar.gz $(CURDIR)/debian/copy/opt/copy-client/copy.tar.gz
+else
+	install -Dm 644 $(CURDIR)/copy-x86.tar.gz $(CURDIR)/debian/copy/opt/copy-client/copy.tar.gz
+endif
+
+# Build architecture-independent files here.
+binary-indep: build install
+# We have nothing to do by default.
+
+# Build architecture-dependent files here.
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs
+	dh_installdocs
+	dh_icons
+	dh_installmenu
+	dh_installmime
+	dh_link
+	dh_strip
+	dh_compress
+	dh_fixperms
+	dh_installdeb
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install 
+

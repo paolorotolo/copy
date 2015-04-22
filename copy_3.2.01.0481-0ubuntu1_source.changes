@@ -1,0 +1,41 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.8
+Date: Wed, 22 Apr 2015 21:31:17 +0100
+Source: copy
+Binary: copy
+Architecture: source
+Version: 3.2.01.0481-0ubuntu1
+Distribution: vivid
+Urgency: medium
+Maintainer: Paolo Rotolo <paolorotolo@ubuntu.com>
+Changed-By: Paolo Rotolo <paolorotolo@ubuntu.com>
+Description:
+ copy       - Share amazing things with Copy.
+Changes:
+ copy (3.2.01.0481-0ubuntu1) vivid; urgency=medium
+ .
+   * New upstream release.
+   * New Indicator Icons.
+Checksums-Sha1:
+ 164e77f38f7c788f57b0af42abf4da6f492cf01e 1086 copy_3.2.01.0481-0ubuntu1.dsc
+ ee5e12a94106dec31f3a1f7e53f0fee355036e0e 39125896 copy_3.2.01.0481-0ubuntu1.tar.xz
+Checksums-Sha256:
+ b84dc641e1209d9c795dc30c6e51efd367733f59c8a0ca77f9e0830ac0162eef 1086 copy_3.2.01.0481-0ubuntu1.dsc
+ fbac5da2092ca5ff6848f67cae12a7380083aa67651adc647144ba890ce7a57a 39125896 copy_3.2.01.0481-0ubuntu1.tar.xz
+Files:
+ 705d0975c6d77fa01d5069471d4191a5 1086 utils optional copy_3.2.01.0481-0ubuntu1.dsc
+ d40b471d12cb37250c0c81af757c02f0 39125896 utils optional copy_3.2.01.0481-0ubuntu1.tar.xz
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQEcBAEBAgAGBQJVN/vaAAoJEPZj7dWN6MREFrIIAJ9J++9L6niJfJlkON0cuZed
+2PUXclAqrJWXqNpX1YKl/Mak+NK5Js8CWKSa9TT7JCB08Jr2ufNBj/1F5WatZSNd
+ebJXpn+rMQwnPLMbY0yrurioej/7Yuzq1ya9FBvZcVCu3TH7bHccLo+lSJPSUQ/t
+jEshjoC+yc73H+mKj06s12TMSDdsZK2LDai+8ANMMpgFBPvNdgQFYwSCp+VIY93f
+j3DnVh1NiPu6zy8kINZT0+fxzQnKWY2f5KDQ5KstY+sjWOCU/nIl6KLfu8KL0t0Z
+d8RxCdT6GM/Cq2r+tqMjAIeKlBu3DoLP5p/1r7xIE5tnHcTKLSGSTN56NomcbLM=
+=xc7e
+-----END PGP SIGNATURE-----
